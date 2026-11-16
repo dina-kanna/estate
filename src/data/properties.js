@@ -67,7 +67,7 @@ export const properties = [
     beds: 2,
     baths: 2,
     area: 1200,
-    image: "https://images.unsplash.com/photo-1600210472481-6b7c8b8b8b8b?w=1000",
+   image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1000&auto=format&fit=crop",
     featured: true,
     description: "Comfortable rental apartment suitable for families.",
     amenities: ["Lift", "Parking", "Security"]

@@ -40,8 +40,7 @@ const Navbar = () => {
   const closeMenu = () => setIsOpen(false);
 
   const linkClass = ({ isActive }) =>
-    `relative flex items-center gap-1.5 whitespace-nowrap py-2 font-semibold transition-all duration-300
-    ${
+    `relative flex items-center gap-1.5 whitespace-nowrap py-2 font-semibold transition-all duration-300 ${
       isActive
         ? "text-[#c5a36a]"
         : "text-white/75 hover:text-[#c5a36a]"
@@ -71,8 +70,7 @@ const Navbar = () => {
             className="flex shrink-0 items-center gap-2 md:gap-2.5"
           >
             <div className="flex h-10 w-10 md:h-11 md:w-11 lg:h-12 lg:w-12 items-center justify-center rounded-xl md:rounded-2xl bg-[#c5a36a] text-[#102a25] shadow-lg">
-              <Building2 size={24} className="md:hidden" />
-              <Building2 size={26} className="hidden md:block" />
+              <Building2 size={24} />
             </div>
 
             <div>
@@ -86,7 +84,7 @@ const Navbar = () => {
             </div>
           </Link>
 
-          {/* TABLET + DESKTOP NAVIGATION */}
+          {/* DESKTOP NAVIGATION */}
           <div className="hidden md:flex flex-1 items-center justify-center gap-3 lg:gap-5 xl:gap-7">
 
             {navLinks.map((link) => (
@@ -114,7 +112,7 @@ const Navbar = () => {
 
           </div>
 
-          {/* TABLET + DESKTOP ACTION BUTTONS */}
+          {/* DESKTOP ACTION BUTTONS */}
           <div className="hidden md:flex shrink-0 items-center gap-2 lg:gap-3">
 
             <Link
@@ -130,7 +128,6 @@ const Navbar = () => {
               className="group flex items-center gap-1 rounded-full bg-[#c5a36a] px-3 py-2.5 lg:gap-2 lg:px-5 lg:py-3 text-xs lg:text-sm font-extrabold text-[#102a25] shadow-lg transition duration-300 hover:-translate-y-0.5 hover:bg-white"
             >
               <span>List Property</span>
-
               <ArrowUpRight
                 size={15}
                 className="transition group-hover:translate-x-1 group-hover:-translate-y-1"
@@ -142,7 +139,7 @@ const Navbar = () => {
           {/* MOBILE MENU BUTTON */}
           <button
             type="button"
-            onClick={() => setIsOpen(!isOpen)}
+            onClick={() => setIsOpen((prev) => !prev)}
             className="flex md:hidden h-10 w-10 items-center justify-center rounded-xl border border-white/15 text-white transition hover:border-[#c5a36a] hover:text-[#c5a36a]"
             aria-label={isOpen ? "Close menu" : "Open menu"}
             aria-expanded={isOpen}
